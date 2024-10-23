@@ -1,19 +1,27 @@
 {
   "name": "icecream-store",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A RESTful web service app for ice cream store ordering",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+          "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+          "start": "npm run build && node dist/index.js",
+          "start:dev": "nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/v1kaa/icecream-store.git"
-  },
-  "author": "",
+  "keywords": [
+      "NodeJS"
+  ],
+  "author": "yourname",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/v1kaa/icecream-store/issues"
+  "devDependencies": {
+      "@babel/cli": "^7.16.8",
+      "@babel/core": "^7.16.10",
+      "@babel/node": "^7.16.8",
+      "@babel/preset-env": "^7.16.11",
+      "nodemon": "^2.0.15",
+      "rimraf": "^3.0.2"
   },
-  "homepage": "https://github.com/v1kaa/icecream-store#readme",
-  "description": ""
+  "dependencies": {
+      "express": "^4.17.3"
+  }
 }
